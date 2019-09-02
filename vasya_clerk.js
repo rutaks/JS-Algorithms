@@ -1,3 +1,6 @@
+// An algorithm to check if a ticket clerk selling 25$ tickets will
+// have change for people buying tickets by paying 25, 50 or 100 dollar respectively
+
 function tickets(peopleInLine) {
 	var bills = [ 0, 0, 0 ];
 	for (var i = 0; i < peopleInLine.length; i++) {
