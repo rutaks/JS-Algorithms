@@ -6,16 +6,16 @@
 // part1:  c   d   w         = cdw
 // part2:    o   e   a r s   = oears
 
-function isMerge(str, p1, p2) {
-	if (!str.length) return !p1.length && !p2.length;
-	if (p1.length && str.charAt(0) == p1.charAt(0)) {
-		if (p2.length && str.charAt(0) == p2.charAt(0)) {
-			return isMerge(str.substr(1), p1.substr(1), p2) || isMerge(str.substr(1), p1, p2.substr(1));
+function isMerge(s, part1, part2) {
+	if (!s.length) return !part1.length && !part2.length;
+	if (part1.length && s.charAt(0) == part1.charAt(0)) {
+		if (part2.length && s.charAt(0) == part2.charAt(0)) {
+			return isMerge(s.substr(1), part1.substr(1), part2) || isMerge(s.substr(1), part1, part2.substr(1));
 		} else {
-			return isMerge(str.substr(1), p1.substr(1), p2);
+			return isMerge(s.substr(1), part1.substr(1), part2);
 		}
-	} else if (p2.length && str.charAt(0) == p2.charAt(0)) {
-		return isMerge(str.substr(1), p1, p2.substr(1));
+	} else if (part2.length && s.charAt(0) == part2.charAt(0)) {
+		return isMerge(s.substr(1), part1, part2.substr(1));
 	} else {
 		return false;
 	}
